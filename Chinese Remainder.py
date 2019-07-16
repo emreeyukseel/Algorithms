@@ -24,7 +24,7 @@ for i in range(len(y)-1):
         mylist[0] = firstelem;
         mylist[j] = mylist[j] + mylist[j-1] + plus;
         modlist[0] = firstelem % y[i+1];
-        modlist[j] = listem[j] % y[i+1];
+        modlist[j] = mylist[j] % y[i+1];
     firstelem = mylist[modlist.index(x[i+1])];
     
 X = firstelem;
