@@ -6,7 +6,7 @@ Created on Thu May 23 23:18:29 2019
 @author: emreyuksel
 """
 
-print('Please enter first x values, then y values so that x=mod(y).')
+print('Please enter first x values, then y values in order to generate equations like x=mod(y).')
 x = list(map(int,input().split(',')));
 y = list(map(int,input().split(',')));
 i=0;
