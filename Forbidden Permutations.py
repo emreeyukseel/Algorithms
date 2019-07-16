@@ -32,4 +32,4 @@ for number in range(10):
             permütasyonlar = permütasyonlarcopy
         
 print(permütasyonlarcopy)
-print("Permütasyonların sayısı: {}".format(len(permütasyonlarcopy)))
+print("Number of permutations is: {}".format(len(permütasyonlarcopy)))
