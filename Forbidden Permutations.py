@@ -6,27 +6,30 @@ Created on Mon Apr  8 19:57:52 2019
 @author: emreyuksel
 """
 from itertools import permutations
-n = int(input("n sayısını giriniz: "))
-yasaklı = []
-permsayı = []
+n = int(input("Please enter n: "))
+forbidden = []
+permnumber = []
+
 for i in range(n):
-    print("X%d sayısını giriniz: " % (i+1))
+    print("Enter X%d: " % (i+1))
     X=list(map(int,input().split(',')))
-    yasaklı.append(X)
+    forbidden.append(X)
 for a in range(1,n+1):
-    permsayı.append(a)
-permütasyonlar = list(permutations(permsayı))
-permütasyonlaryedek = list(permutations(permsayı))
+    permnumber.append(a)
+    
+permütasyonlar = list(permutations(permnumber))
+permütasyonlarcopy = list(permutations(permnumber))
+
 for number in range(10):
-    for sayi in range(n):
-        for pozisyon in yasaklı[sayi]:
+    for numb in range(n):
+        for pozisyon in forbidden[numb]:
             if pozisyon == 0:
                 pass
             else:
                 for iterasyon in permütasyonlar:
-                    if iterasyon[pozisyon-1] == sayi+1:
-                        permütasyonlaryedek.remove(iterasyon)
-            permütasyonlar = permütasyonlaryedek
+                    if iterasyon[pozisyon-1] == numb+1:
+                        permütasyonlarcopy.remove(iterasyon)
+            permütasyonlar = permütasyonlarcopy
         
-print(permütasyonlaryedek)
-print("Permütasyonların sayısı: {}".format(len(permütasyonlaryedek)))
+print(permütasyonlarcopy)
+print("Permütasyonların sayısı: {}".format(len(permütasyonlarcopy)))
