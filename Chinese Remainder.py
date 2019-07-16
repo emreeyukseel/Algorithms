@@ -6,24 +6,26 @@ Created on Thu May 23 23:18:29 2019
 @author: emreyuksel
 """
 
-print('x=mod(y) olacak şekilde sistemin ilk x değerlerini daha sonra y değerlerini giriniz.')
+print('Please enter first x values, then y values so that x=mod(y).')
 x = list(map(int,input().split(',')));
 y = list(map(int,input().split(',')));
 i=0;
 X=0;
 j=1;
-eklencekterim=1;
-ilkeleman=x[0];
-listem=[0] * max(y);
+plus=1;
+firstelem=x[0];
+mylist=[0] * max(y);
 modlist=[0] * max(y);
+
 for i in range(len(y)-1):
-    eklencekterim=eklencekterim*y[i];
-    listem=[0]*max(y);
+    plus=plus*y[i];
+    mylist=[0]*max(y);
     for j in range(y[i+1]):
-        listem[0] = ilkeleman;
-        listem[j] = listem[j] + listem[j-1] + eklencekterim;
-        modlist[0] = ilkeleman % y[i+1];
+        mylist[0] = firstelem;
+        mylist[j] = mylist[j] + mylist[j-1] + plus;
+        modlist[0] = firstelem % y[i+1];
         modlist[j] = listem[j] % y[i+1];
-    ilkeleman = listem[modlist.index(x[i+1])];
-X = ilkeleman;
-print('İstenilen X sayısı:',X)
+    firstelem = mylist[modlist.index(x[i+1])];
+    
+X = firstelem;
+print('X number:',X)
